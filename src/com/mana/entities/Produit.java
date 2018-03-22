@@ -18,6 +18,16 @@ public class Produit implements Serializable {
 			this.prix = prix;
 			this.quantite = quantite;
 		}
+		
+		
+
+		public Produit(Long id, String designation, double prix, int quantite) {
+			super();
+			this.id = id;
+			this.designation = designation;
+			this.prix = prix;
+			this.quantite = quantite;
+		}
 
 		@Override
 		public String toString() {

@@ -8,5 +8,7 @@ public interface IProduitDao {
 	
 	public Produit save(Produit p);
 	public List<Produit> produitsParMC(String mc);
+	public void removeProduit(Long id);
+	public List<Produit>getAll();
 
 }
