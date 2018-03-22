@@ -43,13 +43,21 @@
         <th>Designation</th>
         <th>Prix</th>
         <th>Quantite</th>
+        <th>Option</th>
      </tr> 
       <C:forEach items="${ modele.produits}" var="p">   
      <tr>
          <td>${p.id}</td>
         <td>${p.designation}</td>
         <td>${p.prix}</td>
-        <td>${p.quantite}</td>       
+        <td>${p.quantite}</td>
+        <td>
+          <form action="produitsservlet" method="post">
+             <input type="hidden" name="id" value="${p.id}" />
+             <input type="hidden" name="action" value="supprimer" />
+             <input type="submit" value="supprimer" />
+          </form>
+        </td>       
      </tr>
      </C:forEach>
    </table>  

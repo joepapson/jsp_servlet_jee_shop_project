@@ -22,6 +22,12 @@ public class ProduitsServlet extends HttpServlet {
 		
 		metier = new ProduitDaoImpl();
 		
+          if(request.getParameter("action") !=null) {
+			
+        	  metier.removeProduit(Long.parseLong(request.getParameter("id")));
+
+		}else {
+		
 		//Recuperer les informations
 		
 				String designation = request.getParameter("designation");
@@ -32,12 +38,8 @@ public class ProduitsServlet extends HttpServlet {
 				
 				Produit p = new Produit(1L,designation,Double.parseDouble(prix),Integer.parseInt(quantite));
 							
-				/*p.setDesignation(designation);
-				p.setPrix(Double.parseDouble(prix));
-				p.setQuantite(Integer.parseInt(quantite));*/
-	            
 				metier.save(p);
-	            
+		}   
 				
 				// this our Java bean
 	            ProduitModel pb = new ProduitModel();
@@ -48,10 +50,7 @@ public class ProduitsServlet extends HttpServlet {
 	    		request.setAttribute("modele", pb);
 	    		
 	    		request.getRequestDispatcher("prods.jsp").forward(request, response);
-	    		
-				
-		
-		
+	    				
 	}
 
 }
