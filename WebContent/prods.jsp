@@ -55,7 +55,7 @@
           <form action="produitsservlet" method="post">
              <input type="hidden" name="id" value="${p.id}" />
              <input type="hidden" name="action" value="supprimer" />
-             <input type="submit" value="supprimer" />
+             <input type="submit" value="supprimer" class="btn btn-danger" />
           </form>
         </td>       
      </tr>
