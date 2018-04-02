@@ -12,7 +12,7 @@ public class SingletonConnection {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/product_shop", "admin", "yourPassword");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/product_shop", "user", "password");
 		} catch (ClassNotFoundException e) {
 			
 			e.printStackTrace();
